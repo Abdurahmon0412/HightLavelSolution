@@ -25,7 +25,7 @@ var accountService = provider.GetRequiredService<IAccountService>();
 var result = await accountService.RegisterAsync(new RegisterDetails()
 {
     EamilAddress = "abdurahmonsadriddinov0412@gmail.com",
-    Password = "Testtest_1"
+    Password = "Abdurahmon0412"
 });
 
 Console.WriteLine(result);
