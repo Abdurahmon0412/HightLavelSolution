@@ -42,6 +42,7 @@ var intersectedPosts = postA.Topics.ZipIntersectBy(postB.Topics, topic => topic.
 foreach (var (previus,updatePosts) in intersectedPosts)
 {
     Console.WriteLine($"{previus.Name}");
+
     Console.WriteLine($"{updatePosts.Name}");
 }
 
