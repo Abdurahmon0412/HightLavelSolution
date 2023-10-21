@@ -7,8 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="FileStorage\" />
+    <Folder Include="FileStorage\Brokers\" />
+    <Folder Include="FileStorage\Services\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileExplorer.Appllication\FileExplorer.Appllication.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+	</ItemGroup>
 
 </Project>
