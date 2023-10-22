@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="FileStorage\Services\**" />
-    <EmbeddedResource Remove="FileStorage\Services\**" />
-    <None Remove="FileStorage\Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FileExplorer.Appllication\FileExplorer.Appllication.csproj" />
   </ItemGroup>
 
@@ -22,10 +16,6 @@
 		<PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="FileStorage\NewFolder\" />
 	</ItemGroup>
 
 </Project>

@@ -19,8 +19,9 @@ public class DirectoryBroker : IDirectoryBroker
 
     public IEnumerable<StorageDirectory> GetDirectories(string directoryPath) => GetDirectoriesPath(directoryPath)
         .Select(path => _mapper.Map<StorageDirectory>(new DirectoryInfo(path)));
-
+    
     public StorageDirectory GetByPathAsync(string directoryPath) => _mapper.Map<StorageDirectory>(new DirectoryInfo(directoryPath));
+
 
     public bool ExistsAsync(string directoryPath) => Directory.Exists(directoryPath);
 
