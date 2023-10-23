@@ -4,11 +4,11 @@ using Training.FileExplorer.Application.FileStorage.Services;
 
 namespace FileExplorer.Infrastructure.FileStorage.Services;
 
-public class FileServices : IFileService
+public class FileService : IFileService
 {
     private readonly IFileBroker _fileBroker;
 
-    public FileServices(IFileBroker fileBroker) => _fileBroker = fileBroker;
+    public FileService(IFileBroker fileBroker) => _fileBroker = fileBroker;
 
     public async ValueTask<IList<StorageFile>> GetFilesByPathAsync(IEnumerable<string> filesPath)
     {
