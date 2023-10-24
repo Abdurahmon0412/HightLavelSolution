@@ -57,11 +57,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FhotoGram", "FhotoGram\Fhot
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson57_File.API", "Lesson57_File.API", "{81FD0ACC-20D4-4359-8C6B-321B65700CDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileExplorer.API", "FileExplorer.API\FileExplorer.API.csproj", "{BE91220D-161F-4393-BD2A-0522A9FFCF65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileExplorer.API", "FileExplorer.API\FileExplorer.API.csproj", "{BE91220D-161F-4393-BD2A-0522A9FFCF65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileExplorer.Appllication", "FileExplorer.Appllication\FileExplorer.Appllication.csproj", "{60051FD6-14C1-42AB-B060-E0B93BA6340F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileExplorer.Appllication", "FileExplorer.Appllication\FileExplorer.Appllication.csproj", "{60051FD6-14C1-42AB-B060-E0B93BA6340F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileExplorer.Infrastructure", "FileExplorer.Infrastructure\FileExplorer.Infrastructure.csproj", "{F98578DD-F794-4BBD-9A24-CD46421EA3F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileExplorer.Infrastructure", "FileExplorer.Infrastructure\FileExplorer.Infrastructure.csproj", "{F98578DD-F794-4BBD-9A24-CD46421EA3F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson61", "Lesson61", "{F2E8BC82-9CA6-4B84-9167-F4249B743531}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsefulMapster", "UsefulMapster\UsefulMapster.csproj", "{2EC85962-069A-46DC-8C75-C649ADCF093A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson62", "Lesson62", "{2816AC3F-A506-4837-A712-C283A9044B12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson62_Authorization", "Lesson62_Authorization\Lesson62_Authorization.csproj", "{38DD5FD9-5A44-4BD0-9393-18789D127683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +145,14 @@ Global
 		{F98578DD-F794-4BBD-9A24-CD46421EA3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F98578DD-F794-4BBD-9A24-CD46421EA3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F98578DD-F794-4BBD-9A24-CD46421EA3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC85962-069A-46DC-8C75-C649ADCF093A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC85962-069A-46DC-8C75-C649ADCF093A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC85962-069A-46DC-8C75-C649ADCF093A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC85962-069A-46DC-8C75-C649ADCF093A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38DD5FD9-5A44-4BD0-9393-18789D127683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DD5FD9-5A44-4BD0-9393-18789D127683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DD5FD9-5A44-4BD0-9393-18789D127683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DD5FD9-5A44-4BD0-9393-18789D127683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +175,8 @@ Global
 		{BE91220D-161F-4393-BD2A-0522A9FFCF65} = {81FD0ACC-20D4-4359-8C6B-321B65700CDE}
 		{60051FD6-14C1-42AB-B060-E0B93BA6340F} = {81FD0ACC-20D4-4359-8C6B-321B65700CDE}
 		{F98578DD-F794-4BBD-9A24-CD46421EA3F6} = {81FD0ACC-20D4-4359-8C6B-321B65700CDE}
+		{2EC85962-069A-46DC-8C75-C649ADCF093A} = {F2E8BC82-9CA6-4B84-9167-F4249B743531}
+		{38DD5FD9-5A44-4BD0-9393-18789D127683} = {2816AC3F-A506-4837-A712-C283A9044B12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79D9997F-AC73-461D-B7C6-651AF5CF47A5}

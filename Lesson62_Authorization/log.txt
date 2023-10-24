@@ -1,0 +1,12 @@
+2023-10-24 16:01:13Z request path - / with method GET
+2023-10-24 16:01:13Z request path - /favicon.ico with method GET
+2023-10-24 16:01:36Z request path - / with method GET
+2023-10-24 16:01:51Z request path - / with method GET
+2023-10-24 16:01:52Z request path - / with method GET
+2023-10-24 16:01:52Z request path - / with method GET
+2023-10-24 16:01:53Z request path - / with method GET
+2023-10-24 16:01:53Z request path - / with method GET
+2023-10-24 16:01:53Z request path - / with method GET
+2023-10-24 16:01:55Z request path - / with method GET
+2023-10-24 16:01:55Z request path - / with method GET
+2023-10-24 16:01:55Z request path - / with method GET
