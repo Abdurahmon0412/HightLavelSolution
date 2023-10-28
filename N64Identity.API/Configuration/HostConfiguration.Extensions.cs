@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using N64Identity.Application.Common.Identity.Services;
+using N64Identity.Application.Common.Notifications.Services;
 using N64Identity.Application.Common.Settings;
 using N64Identity.InfraStructure.Common.Identity.Services;
+using N64Identity.InfraStructure.Common.Notifications.Services;
 using System.Text;
 
 namespace N64Identity.API.Configuration;
@@ -14,16 +16,28 @@ public static partial class HostConfiguration
     public static WebApplicationBuilder AddIdentityInfrastructure(this WebApplicationBuilder builder)
     {
         builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(nameof(JwtSettings)));
+        builder.Services.Configure<VerificationTokenSettings>(builder.Configuration.GetSection(nameof(VerificationTokenSettings)));
 
-        builder.Services.AddTransient<ITokenGeneratorService, TokenGeneratorService>();
-        builder.Services.AddTransient<IPasswordHashservice, PasswordHashService>();
+        builder.Services.AddDataProtection();
 
-        builder.Services.AddScoped<IAuthService, AuthService>();
+        builder
+            .Services
+                .AddTransient<ITokenGeneratorService, TokenGeneratorService>()
+                .AddTransient<IPasswordHashservice, PasswordHashService>()
+                .AddTransient<IVerificationTokenGeneratorService, VerificationTokenGeneratorService>();
+
+        builder
+            .Services
+                .AddScoped<IAccountService, AccountService>()
+                .AddScoped<IAuthService, AuthService>();
 
         var jwtSettings = new JwtSettings();
         builder.Configuration.GetSection(nameof(JwtSettings)).Bind(jwtSettings);
 
-        builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+
+        builder
+            .Services
+            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
                 options.RequireHttpsMetadata = false;
@@ -43,6 +57,15 @@ public static partial class HostConfiguration
         return builder;
     }
     
+    public static WebApplicationBuilder AddNotificationInfrastructure(this WebApplicationBuilder builder)
+    {
+        builder.Services.Configure<EmailSenderSettings> (builder.Configuration.GetSection(nameof(EmailSenderSettings)));
+
+        builder.Services.AddScoped<IEmailOrchestrationService, EmailOrchestrationService>();
+
+        return builder;
+    }
+
     public static WebApplicationBuilder AddDevTools(this WebApplicationBuilder builder)
     {
         builder.Services.AddSwaggerGen();

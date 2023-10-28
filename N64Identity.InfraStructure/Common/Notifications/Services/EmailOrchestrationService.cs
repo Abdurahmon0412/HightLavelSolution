@@ -2,6 +2,7 @@
 using N64Identity.Application.Common.Settings;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.Extensions.Options;
 
 namespace N64Identity.InfraStructure.Common.Notifications.Services;
 

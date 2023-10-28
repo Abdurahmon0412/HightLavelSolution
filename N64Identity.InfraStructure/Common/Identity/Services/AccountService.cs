@@ -41,15 +41,15 @@ public class AccountService : IAccountService
         return result;
     }
 
-    public ValueTask<User> CreateUserAsync(User user)
+    public async ValueTask<User> CreateUserAsync(User user)
     {
         _users.Add(user);
 
         var emailVerificationToken = _verificationTokenGeneratorService.GenerateToken(VerificationType.EmailAddressVerification, user.Id);
 
-        _emailOrchestrationService.SendAsync(user.EmailAddress, emailVerificationToken);
+        await _emailOrchestrationService.SendAsync(user.EmailAddress, emailVerificationToken);
 
-        return new ValueTask<User>(user);
+        return user;
     }
 
     private ValueTask<bool> MarkEmailAsVerifiedAsync(Guid userId)
