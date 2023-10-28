@@ -5,12 +5,16 @@ using System.Text;
 using N64Identity.Domain.Entities;
 using N64Identity.Application.Common.Constants;
 using N64Identity.Application.Common.Identity.Services;
+using N64Identity.Application.Common.Settings;
+using Microsoft.Extensions.Options;
 
 namespace N64Identity.InfraStructure.Common.Identity.Services;
 
 public class TokenGeneratorService : ITokenGeneratorService
 {
-    public string SecretKey = "8E6225FC-6E84-4E50-805F-FB3B5B6138BE";
+    private readonly JwtSettings _jwtSettings;
+
+    public TokenGeneratorService(IOptions<JwtSettings> jwtSettings) => _jwtSettings = jwtSettings.Value;
 
     public string GetToken(User user)
     {
@@ -23,14 +27,15 @@ public class TokenGeneratorService : ITokenGeneratorService
     {
         var claims = GetClaims(user);
 
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey));
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
         
-        return new JwtSecurityToken(issuer:"dsdfadfqsa",
-            audience:"wdqfweqe",
+        return new JwtSecurityToken(
+            issuer: _jwtSettings.ValidIssuer,
+            audience: _jwtSettings.ValidAudience,
             claims:claims,
             notBefore: DateTime.UtcNow,
-            expires: DateTime.Now.AddDays(1),
+            expires: DateTime.Now.AddDays(_jwtSettings.ExpirationTimeInMinutes),
             signingCredentials: credentials);
     }
 

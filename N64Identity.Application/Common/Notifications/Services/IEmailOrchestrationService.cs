@@ -1,6 +1,6 @@
 ﻿namespace N64Identity.Application.Common.Notifications.Services;
 
-internal interface IEmailOrchestrationService
+public interface IEmailOrchestrationService
 {
-
+    ValueTask<bool> SendAsync(string emailAddress, string message);
 }

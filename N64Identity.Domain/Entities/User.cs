@@ -13,5 +13,7 @@ public class User
 
     public string EmailAddress { get; set; } = default!;
 
-    public string Password { get; set; } = default!;
+    public string Passwordhash { get; set; } = default!;
+
+    public bool IsEmailAddressVerified { get; set; }
 }
